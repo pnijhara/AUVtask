@@ -10,6 +10,7 @@ def index():
 def gen(capture):
     while True:    	
         capture.get_frame()
+
 @app.route('/video_feed')
 def video_feed():
     return Response(gen(VideoCamera()),
