@@ -8,5 +8,11 @@ class VideoCamera(object):
         self.video.release()
     
     def get_frame(self):
-        check, frame = self.video.read()
-        cv2.imshow("capturing", frame)
+        # check, frame = self.video.read()
+        # cv2.imshow("capturing", frame)
+        while True:
+            check, frame = self.video.read()
+            cv2.imshow("capturing", frame)
+            key = cv2.waitKey(1)
+            if key == ord('q'):
+                break
